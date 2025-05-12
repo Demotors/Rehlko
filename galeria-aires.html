@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería - Aires Acondicionados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    h2, h3 {
+      color: #0a2149;
+    }
+    header {
+      background-color: #0a2149;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+    .search-form {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .search-form input {
+      padding: 8px 12px;
+      border: none;
+      outline: none;
+    }
+    .search-form button {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .header-left, .header-center, .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-left { justify-content: flex-start; }
+    .header-right { justify-content: flex-end; }
+    .header-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .centered { text-align: center; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .gallery-item img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .gallery-item p {
+      text-align: center;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .back-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #0a2149;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <form class="search-form">
+      <input type="text" placeholder="Search" />
+      <button type="submit">🔍</button>
+    </form>
+  </div>
+  <div class="header-center">
+    <img src="img/logo.png" alt="Logo Rehlko" class="logo" />
+  </div>
+  <div class="header-right">
+    <a href="index.html#contacto">CONTÁCTANOS</a>
+  </div>
+</header>
+<section>
+  <h2 class="centered">Aires Acondicionados</h2>
+  <div class="gallery">
+    <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Producto+1"><p>Pantalla</p></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Producto+2"><p>Pantalla</p></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Producto+3"><p>Pantalla</p></div>
+<div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Producto+4"><p>Pantalla</p></div>
+  </div>
+  <a href="index.html" class="back-btn">← Regresar al inicio</a>
+</section>
+</body>
+</html>
