@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,17 +16,46 @@
       color: #0a2149;
     }
     header {
-        position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: #0a2149;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  flex-wrap: wrap;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: #0a2149;
+      color: white;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .header-left, .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .header-left {
+      justify-content: flex-start;
+    }
+    .header-right {
+      justify-content: flex-end;
+    }
+    .header-center {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .header-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      white-space: nowrap;
     }
     .logo {
       height: 40px;
@@ -51,35 +79,6 @@
       padding: 8px;
       cursor: pointer;
       font-size: 16px;
-    }
-.header-left {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.header-center {
-  flex: 0 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-right {
-  flex: 0 1 auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-left: 20px;
-}
-    .header-left { justify-content: flex-start; }
-    .header-right { justify-content: flex-end; }
-    .header-right a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 14px;
     }
     section {
       padding: 40px 20px;
@@ -121,33 +120,35 @@
 </head>
 <body>
 <header>
-  <div class="header-left">
-    <form class="search-form">
-      <input type="text" placeholder="Search" />
-      <button type="submit">🔍</button>
-    </form>
-  </div>
-  <div class="header-center">
+  <div class="header-container">
+    <div class="header-left">
+      <form class="search-form">
+        <input type="text" placeholder="Search" />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+    <div class="header-center">
       <a href="index.html">
-    <img src="LOGO BLANCO_Mesa de trabajo 1.svg" alt="Logo Rehlko" class="logo" />
+        <img src="LOGO BLANCO_Mesa de trabajo 1.svg" alt="Logo Rehlko" class="logo" />
       </a>
-  </div>
-  <div class="header-right">
-    <a href="index.html#contacto">CONTÁCTANOS</a>
+    </div>
+    <div class="header-right">
+      <a href="index.html#contacto">CONTÁCTANOS</a>
+    </div>
   </div>
 </header>
-  </header>
 <div style="height: 90px;"></div>
+
 <section>
   <h2 class="centered">Aires Acondicionados</h2>
   <div class="gallery">
     <div class="gallery-item"><img src="img/lg-hvac-sistema-vrf-paquete-inverter-control-de-doble-sensor-d.avif"><p>Paquete inverter</p></div>
-<div class="gallery-item"><img src="img/lg-hvac-aplicaciones-de-chillers-centrífugo-bomba-de-calor-kv-m.avif"><p>Chillers</p></div>
-<div class="gallery-item"><img src="img/lg-hvac-multi-split-múltiples-unidades-interiores-thumb-d.jpg"><p>Mini Splits</p></div>
+    <div class="gallery-item"><img src="img/lg-hvac-aplicaciones-de-chillers-centrífugo-bomba-de-calor-kv-m.avif"><p>Chillers</p></div>
+    <div class="gallery-item"><img src="img/lg-hvac-multi-split-múltiples-unidades-interiores-thumb-d.jpg"><p>Mini Splits</p></div>
   </div>
   <a href="index.html" class="back-btn">← Regresar al inicio</a>
 </section>
-  
+
 <!-- FOOTER -->
 <footer>
   <style>
@@ -194,8 +195,8 @@
 
   <div class="footer-content">
     <div class="footer-left">
-        <a href="index.html">
-      <img src="img/LOGOS_Mesa de trabajo 1.svg" alt="Logo Rehlko">
+      <a href="index.html">
+        <img src="img/LOGOS_Mesa de trabajo 1.svg" alt="Logo Rehlko">
       </a>
       <p>14 avenida 25-25 Colonia Mariscal, zona 11, Ciudad de Guatemala</p>
       <p><a href="https://wa.me/50235229687" target="_blank">+502 3522 9687</a></p>
@@ -212,3 +213,4 @@
 </footer>
 </body>
 </html>
+
