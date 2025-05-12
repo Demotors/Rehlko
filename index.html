@@ -210,20 +210,73 @@
 </header>
 <div style="height: 90px;"></div>
 
-<!-- Banner -->
-<section class="banner">
-  <div class="banner-content">
-    <div class="banner-text">
-      <small>Tendencias 2024 · Tecnología</small>
-      <h2>Soluciones Interactivas</h2>
-      <p>Incorpora pantallas profesionales en tu industria o negocio. Alto rendimiento, máxima visibilidad.</p>
+<!-- Banner visual con botón flotante -->
+<style>
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 1s ease;
+    width: 200%;
+    height: 100%;
+  }
+
+  .slider-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .slider-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .banner-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-color: #0a2149;
+    color: white;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    z-index: 2;
+  }
+</style>
+
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slider-slide">
+      <img src="img/banner-pantalla.png" alt="Banner 1">
       <a href="https://wa.me/50235229687" target="_blank" class="banner-btn">COTIZAR</a>
     </div>
-    <div class="banner-image">
-      <img src="img/lg-hvac-aplicaciones-de-chillers-centrífugo-de-banco-de-hielo-enfría-el-área-interior-derritiendo-el-hielo-d.avif" alt="Pantalla interactiva">
+    <div class="slider-slide">
+      <img src="img/banner-extra.png" alt="Banner 2">
+      <a href="https://wa.me/50235229687" target="_blank" class="banner-btn">COTIZAR</a>
     </div>
   </div>
-</section>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const sliderTrack = document.getElementById('sliderTrack');
+  const totalSlides = sliderTrack.children.length;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }, 5000);
+</script>
 
 <!-- Productos -->
 <section id="productos">
