@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,19 +12,22 @@
       color: #333;
       scroll-behavior: smooth;
     }
+    h2, h3 { color: #0a2149; }
     header {
+      position: fixed;
+      top: 0;
+      width: 100%;
       background-color: #0a2149;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      flex-wrap: wrap;
+      padding: 20px 40px;
+      min-height: 90px;
+      flex-wrap: nowrap;
+      z-index: 999;
     }
-    .logo {
-      height: 40px;
-      width: auto;
-    }
+    .logo { height: 40px; width: auto; }
     .search-form {
       display: flex;
       align-items: center;
@@ -37,7 +39,6 @@
       padding: 8px 12px;
       border: none;
       outline: none;
-      font-family: 'Poppins', sans-serif;
     }
     .search-form button {
       background: none;
@@ -47,20 +48,23 @@
       font-size: 16px;
     }
     .header-left, .header-center, .header-right {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .header-left { justify-content: flex-start; }
-    .header-right { justify-content: flex-end; }
+    .header-right {
+      justify-content: flex-end;
+      padding-right: 60px;
+      min-width: 180px;
+    }
     .header-right a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
+      font-weight: 400;
+      font-size: 16px;
+      white-space: nowrap;
     }
-    .header-right a:hover { text-decoration: underline; }
     section {
       padding: 40px 20px;
       max-width: 1000px;
@@ -87,36 +91,106 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+    .category-card p { margin-top: 10px; font-weight: 700; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
-    .gallery-item img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .gallery-item p {
-      text-align: center;
-      font-weight: 500;
-      margin-top: 10px;
-    }
-    .back-btn {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 24px;
+    .contact-form button {
       background-color: #0a2149;
       color: white;
-      text-decoration: none;
+      padding: 10px 20px;
+      border: none;
       border-radius: 4px;
       font-weight: bold;
-      text-align: center;
-      width: 200px;
+      cursor: pointer;
     }
+    footer {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    .footer-content {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-left, .footer-right {
+      flex: 1 1 300px;
+      margin-bottom: 20px;
+    }
+    .footer-left img { width: 120px; margin-bottom: 20px; }
+    .footer-left p, .footer-right li {
+      color: #4c4c4c;
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    .footer-right ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-right a {
+      color: #4c4c4c;
+      text-decoration: none;
+    }
+    .banner {
+      background-color: #eaf0ed;
+      padding: 60px 20px;
+    }
+    .banner-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+      gap: 40px;
+    }
+    .banner-text {
+      flex: 1 1 400px;
+    }
+    .banner-text small {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #333;
+    }
+    .banner-text h2 {
+      color: #0a2149;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+    .banner-text p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .banner-btn {
+      display: inline-block;
+      background-color: #0a2149;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .banner-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .banner-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    p { color: #4c4c4c; }
   </style>
 </head>
 <body>
@@ -134,16 +208,26 @@
     <a href="#contacto">CONTÁCTANOS</a>
   </div>
 </header>
+<div style="height: 90px;"></div>
 
-<section>
-  <p class="centered">
-    En Rehlko, ofrecemos soluciones integrales en climatización y visualización profesional para el sector industrial y comercial. 
-    Distribuimos aires acondicionados industriales de alto rendimiento, así como pantallas especializadas para digital signage.
-  </p>
+<!-- Banner -->
+<section class="banner">
+  <div class="banner-content">
+    <div class="banner-text">
+      <small>Tendencias 2024 · Tecnología</small>
+      <h2>Soluciones Interactivas</h2>
+      <p>Incorpora pantallas profesionales en tu industria o negocio. Alto rendimiento, máxima visibilidad.</p>
+      <a href="https://wa.me/50235229687" target="_blank" class="banner-btn">COTIZAR</a>
+    </div>
+    <div class="banner-image">
+      <img src="img/banner-pantalla.png" alt="Pantalla interactiva">
+    </div>
+  </div>
 </section>
 
+<!-- Productos -->
 <section id="productos">
-  <h2>Nuestros productos</h2>
+  <h2 class="centered">Nuestros productos</h2>
   <p class="centered">
     Contamos con sistemas de aire acondicionado para tu industria y sistemas de Digital Signage para cualquier sector.
   </p>
@@ -159,60 +243,45 @@
   </div>
 </section>
 
-<section id="contacto">
-  <h2 class="centered">Contáctanos</h2>
-  <form style="max-width:600px; margin:auto;">
-    <input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:4px;">
-    <input type="email" name="correo" placeholder="Correo electrónico" required style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:4px;">
-    <input type="tel" name="telefono" placeholder="Teléfono" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:4px;">
-    <textarea name="mensaje" rows="5" placeholder="Mensaje" required style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:4px;"></textarea>
-    <button type="submit" style="background-color:#0a2149;color:white;padding:12px 24px;border:none;border-radius:4px;font-weight:bold;cursor:pointer;">Enviar mensaje</button>
-  </form>
+<!-- Acerca de -->
+<section>
+  <div class="centered">
+    <img src="img/logo.png" alt="Logo Rehlko" style="width: 150px; margin-bottom: 20px;">
+    <p>
+      En Rehlko, ofrecemos soluciones integrales en climatización y visualización profesional para el sector industrial y comercial. 
+      Distribuimos aires acondicionados industriales y mini splits de alto rendimiento, así como pantallas especializadas para digital signage.
+    </p>
+  </div>
 </section>
 
-<footer style="background-color:#fff;padding:40px 20px;border-top:1px solid #ccc;display:flex;justify-content:space-between;flex-wrap:wrap;max-width:1000px;margin:auto;">
-  <div style="flex:1 1 300px;margin-bottom:20px;">
-    <img src="img/logo.png" alt="Logo Rehlko" style="width:120px;margin-bottom:20px;" />
-    <p>14 avenida 25-25 Colonia Mariscal, zona 11, Ciudad de Guatemala</p>
-    <p><a href="https://wa.me/50235229687" target="_blank" style="color:#666;text-decoration:none;">+502 3522 9687</a></p>
-    <p><a href="mailto:ventas@rehlkoguatemala.com" style="color:#666;text-decoration:none;">ventas@rehlkoguatemala.com</a></p>
-  </div>
-  <div style="flex:1 1 300px;margin-bottom:20px;">
-    <h3 style="font-weight:700;">Categorías</h3>
-    <ul style="list-style:none;padding:0;margin:0;">
-      <li><a href="#productos" style="color:#666;text-decoration:none;">Aires Acondicionados</a></li>
-      <li><a href="#productos" style="color:#666;text-decoration:none;">Digital Signage</a></li>
-    </ul>
-  </div>
-</footer>
-
+<!-- Formulario de contacto -->
 <section id="contacto">
   <h2 class="centered">Contáctanos</h2>
   <form class="contact-form" style="max-width: 600px; margin: 0 auto;">
-    <input type="text" placeholder="Nombre completo" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:4px;border:1px solid #ccc;">
-    <input type="email" placeholder="Correo electrónico" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:4px;border:1px solid #ccc;">
-    <textarea placeholder="Mensaje" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:4px;border:1px solid #ccc;"></textarea>
-    <button type="submit" style="background-color:#0a2149;color:white;padding:10px 20px;border:none;border-radius:4px;font-weight:bold;">Enviar</button>
+    <input type="text" placeholder="Nombre completo" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <textarea placeholder="Mensaje" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
   </form>
 </section>
 
-<footer style="background-color:#fff;border-top:1px solid #ccc;padding:30px 20px;margin-top:60px;">
-  <div style="max-width:1000px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;">
-    <div style="flex:1 1 300px;margin-bottom:20px;">
-      <img src="img/logo.png" alt="Logo Rehlko" style="width:120px;margin-bottom:20px;">
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="img/logo.png" alt="Logo Rehlko">
       <p>14 avenida 25-25 Colonia Mariscal, zona 11, Ciudad de Guatemala</p>
-      <p><a href="https://wa.me/50235229687" style="color:#333;text-decoration:none;">+502 3522 9687</a></p>
-      <p><a href="mailto:ventas@rehlkoguatemala.com" style="color:#333;text-decoration:none;">ventas@rehlkoguatemala.com</a></p>
+      <p><a href="https://wa.me/50235229687" target="_blank">+502 3522 9687</a></p>
+      <p><a href="mailto:ventas@rehlkoguatemala.com">ventas@rehlkoguatemala.com</a></p>
     </div>
-    <div style="flex:1 1 300px;margin-bottom:20px;">
-      <h3 style="font-weight:bold;">Categorías</h3>
-      <ul style="list-style:none;padding:0;margin:0;">
-        <li><a href="#productos" style="color:#333;text-decoration:none;">Aires Acondicionados</a></li>
-        <li><a href="#productos" style="color:#333;text-decoration:none;">Digital Signage</a></li>
+    <div class="footer-right">
+      <h3>Categorías</h3>
+      <ul>
+        <li><a href="#productos">Aires Acondicionados</a></li>
+        <li><a href="#productos">Digital Signage</a></li>
       </ul>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
