@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,16 +17,45 @@
     }
     header {
       position: fixed;
-top: 0;
-width: 100%;
-z-index: 999;
+      top: 0;
+      width: 100%;
+      z-index: 999;
       background-color: #0a2149;
       color: white;
+    }
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
       flex-wrap: wrap;
+    }
+    .header-left, .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .header-left {
+      justify-content: flex-start;
+    }
+    .header-right {
+      justify-content: flex-end;
+    }
+    .header-center {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .header-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      white-space: nowrap;
     }
     .logo {
       height: 40px;
@@ -51,20 +79,6 @@ z-index: 999;
       padding: 8px;
       cursor: pointer;
       font-size: 16px;
-    }
-    .header-left, .header-center, .header-right {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .header-left { justify-content: flex-start; }
-    .header-right { justify-content: flex-end; }
-    .header-right a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 14px;
     }
     section {
       padding: 40px 20px;
@@ -102,24 +116,25 @@ z-index: 999;
       text-align: center;
       width: 200px;
     }
-    p { color: #4c4c4c; }
   </style>
 </head>
 <body>
 <header>
-  <div class="header-left">
-    <form class="search-form">
-      <input type="text" placeholder="Search" />
-      <button type="submit">🔍</button>
-    </form>
-  </div>
-  <div class="header-center">
+  <div class="header-container">
+    <div class="header-left">
+      <form class="search-form">
+        <input type="text" placeholder="Search" />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+    <div class="header-center">
       <a href="index.html">
-    <img src="img/LOGO BLANCO_Mesa de trabajo 1.svg" class="logo">
-        </a>
-  </div>
-  <div class="header-right">
-    <a href="#contacto">CONTÁCTANOS</a>
+        <img src="LOGO BLANCO_Mesa de trabajo 1.svg" alt="Logo Rehlko" class="logo" />
+      </a>
+    </div>
+    <div class="header-right">
+      <a href="index.html#contacto">CONTÁCTANOS</a>
+    </div>
   </div>
 </header>
 <div style="height: 90px;"></div>
@@ -127,13 +142,14 @@ z-index: 999;
 <section>
   <h2 class="centered">Digital Signage</h2>
   <div class="gallery">
-    <div class="gallery-item"><img src="img/TR3DK-01-A New-Level-of-Classroom-with-LG-CreateBoard-Interactive-Digital-Signage-ID-D.avif"><p>Pantalla interactiva</p></div>
-<div class="gallery-item"><img src="img/5UL3KJZK9S0k4i7qNlutEH9MDghS7Hs8uLOtXXxS.jpeg"><p>Pantalla Estándar</p></div>
+    <div class="gallery-item"><img src="img/signage-led-panel-1.jpg"><p>Panel LED</p></div>
+    <div class="gallery-item"><img src="img/signage-touch-display.jpg"><p>Pantalla Táctil</p></div>
+    <div class="gallery-item"><img src="img/signage-menu-board.jpg"><p>Menu Board</p></div>
   </div>
   <a href="index.html" class="back-btn">← Regresar al inicio</a>
 </section>
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <style>
     footer {
@@ -179,9 +195,9 @@ z-index: 999;
 
   <div class="footer-content">
     <div class="footer-left">
-       <a href="index.html">
-      <img src="LOGOS_Mesa de trabajo 1.svg" alt="Logo Rehlko">
-         </a>
+      <a href="index.html">
+        <img src="img/LOGOS_Mesa de trabajo 1.svg" alt="Logo Rehlko">
+      </a>
       <p>14 avenida 25-25 Colonia Mariscal, zona 11, Ciudad de Guatemala</p>
       <p><a href="https://wa.me/50235229687" target="_blank">+502 3522 9687</a></p>
       <p><a href="mailto:ventas@rehlkoguatemala.com">ventas@rehlkoguatemala.com</a></p>
