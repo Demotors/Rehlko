@@ -320,12 +320,17 @@
 <!-- Formulario de contacto -->
 <section id="contacto">
   <h2 class="centered">Contáctanos</h2>
-  <form class="contact-form" style="max-width: 600px; margin: 0 auto;">
-    <input type="text" placeholder="Nombre completo" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <textarea placeholder="Mensaje" rows="5" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+  <form action="https://formsubmit.co/ventas@rehlkoguatemala.com" method="POST" class="contact-form" style="max-width: 600px; margin: 0 auto;">
+  <input type="text" name="name" placeholder="Nombre completo" required>
+  <input type="email" name="email" placeholder="Correo electrónico" required>
+  <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+
+  <!-- Opcionales -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://rehlkoguatemala.com/agradecimiento.html">
+
+  <button type="submit">Enviar</button>
+</form>
 </section>
 
 <!-- Footer -->
