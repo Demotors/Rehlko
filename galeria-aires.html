@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Galería - Aires Acondicionados</title>
+  <title>Rehlko - Página Principal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,55 +12,22 @@
       color: #333;
       scroll-behavior: smooth;
     }
-    h2, h3 {
-      color: #0a2149;
-    }
+    h2, h3 { color: #0a2149; }
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 999;
       background-color: #0a2149;
       color: white;
-    }
-    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
+      padding: 20px 40px;
+      min-height: 90px;
+      flex-wrap: nowrap;
+      z-index: 999;
     }
-    .header-left, .header-right {
-      flex: 1;
-      display: flex;
-      align-items: center;
-    }
-    .header-left {
-      justify-content: flex-start;
-    }
-    .header-right {
-      justify-content: flex-end;
-    }
-    .header-center {
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-    }
-    .header-right a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 16px;
-      white-space: nowrap;
-    }
-    .logo {
-      height: 40px;
-      width: auto;
-    }
+    .logo { height: 40px; width: auto; }
     .search-form {
       display: flex;
       align-items: center;
@@ -80,56 +47,173 @@
       cursor: pointer;
       font-size: 16px;
     }
+    .header-left, .header-center, .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-left { justify-content: flex-start; }
+    .header-right {
+      justify-content: flex-end;
+      padding-right: 60px;
+      min-width: 180px;
+    }
+    .header-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      white-space: nowrap;
+    }
     section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
     }
     .centered { text-align: center; }
-    .gallery {
+    .category-section {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
     }
-    .gallery-item img {
-      width: 300px;
-      height: 300px;
+    .category-card {
+      text-align: center;
+      width: 250px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .category-card img {
+      width: 250px;
+      height: 250px;
       object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .gallery-item p {
-      text-align: center;
-      font-weight: 500;
-      margin-top: 10px;
+    .category-card p { margin-top: 10px; font-weight: 700; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
-    .back-btn {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 24px;
+    .contact-form button {
       background-color: #0a2149;
       color: white;
-      text-decoration: none;
+      padding: 10px 20px;
+      border: none;
       border-radius: 4px;
       font-weight: bold;
-      text-align: center;
-      width: 200px;
+      cursor: pointer;
     }
+    footer {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    .footer-content {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-left, .footer-right {
+      flex: 1 1 300px;
+      margin-bottom: 20px;
+    }
+    .footer-left img { width: 120px; margin-bottom: 20px; }
+    .footer-left p, .footer-right li {
+      color: #4c4c4c;
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    .footer-right ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-right a {
+      color: #4c4c4c;
+      text-decoration: none;
+    }
+    .banner {
+      background-color: #eaf0ed;
+      padding: 60px 20px;
+    }
+    .banner-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+      gap: 40px;
+    }
+    .banner-text {
+      flex: 1 1 400px;
+    }
+    .banner-text small {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #333;
+    }
+    .banner-text h2 {
+      color: #0a2149;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+    .banner-text p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .banner-btn {
+      display: inline-block;
+      background-color: #0a2149;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .banner-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .banner-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    p { color: #4c4c4c; }
   </style>
 </head>
 <body>
 <header>
-  <div class="header-container">
-   
-    <div class="header-center">
+  <div class="header-left">
+  <a href="https://www.facebook.com/" target="_blank" style="margin-right: 15px;">
+    <img src="img/ICONOS-REDES-SOCIALES_FACEBOOK.svg" alt="Facebook" style="height: 26px;">
+  </a>
+  <a href="https://www.instagram.com/" target="_blank" style="margin-right: 15px;">
+    <img src="img/ICONOS-REDES-SOCIALES_INSTAGRAM.svg" alt="Instagram" style="height: 26px;">
+  </a>
+  <a href="https://www.linkedin.com/" target="_blank">
+    <img src="img/ICONOS-REDES-SOCIALES_LINKEDIN.svg" alt="LinkedIn" style="height: 26px;">
+  </a>
+</div>
+  </div>
+  <div class="header-center">
       <a href="index.html">
-        <img src="LOGO BLANCO_Mesa de trabajo 1.svg" alt="Logo Rehlko" class="logo" />
-      </a>
-    </div>
-    <div class="header-right">
-      <a href="index.html#contacto">CONTÁCTANOS</a>
-    </div>
+    <img src="img/LOGO BLANCO_Mesa de trabajo 1.svg" class="logo">
+        </a>
+  </div>
+  <div class="header-right">
+    <a href="#contacto">CONTÁCTANOS</a>
   </div>
 </header>
 <div style="height: 90px;"></div>
