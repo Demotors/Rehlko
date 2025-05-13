@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Rehlko - Página Principal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script async src="https://cse.google.com/cse.js?cx=869b93c072393492e"></script>
   <style>
     body {
       margin: 0;
@@ -19,43 +20,34 @@
       width: 100%;
       background-color: #0a2149;
       color: white;
+      z-index: 999;
+    }
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      min-height: 90px;
+      max-width: 1200px;
+      margin: 0 auto;
       flex-wrap: nowrap;
-      z-index: 999;
-    }
-    .logo { height: 40px; width: auto; }
-    .search-form {
-      display: flex;
-      align-items: center;
-      background-color: white;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .search-form input {
-      padding: 8px 12px;
-      border: none;
-      outline: none;
-    }
-    .search-form button {
-      background: none;
-      border: none;
-      padding: 8px;
-      cursor: pointer;
-      font-size: 16px;
     }
     .header-left, .header-center, .header-right {
       display: flex;
       align-items: center;
-      justify-content: center;
     }
-    .header-left { justify-content: flex-start; }
+    .header-left {
+      flex: 1;
+      justify-content: flex-start;
+    }
+    .header-center {
+      flex: 0 0 auto;
+      justify-content: center;
+      margin: 0 auto;
+    }
     .header-right {
+      flex: 1;
       justify-content: flex-end;
-      padding-right: 60px;
+      padding-left: 20px;
       min-width: 180px;
     }
     .header-right a {
@@ -65,157 +57,58 @@
       font-size: 16px;
       white-space: nowrap;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .logo { height: 40px; width: auto; }
+    .gcse-search {
+      max-width: 250px;
+      margin-top: 4px;
     }
-    .centered { text-align: center; }
-    .category-section {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 30px;
+    .gsc-control-cse {
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      font-family: 'Poppins', sans-serif !important;
     }
-    .category-card {
-      text-align: center;
-      width: 250px;
-      text-decoration: none;
-      color: inherit;
-    }
-    .category-card img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .category-card p { margin-top: 10px; font-weight: 700; }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-    .contact-form button {
-      background-color: #0a2149;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      background-color: #fff;
-      border-top: 1px solid #ccc;
-      padding: 30px 20px;
-      margin-top: 60px;
-    }
-    .footer-content {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .footer-left, .footer-right {
-      flex: 1 1 300px;
-      margin-bottom: 20px;
-    }
-    .footer-left img { width: 120px; margin-bottom: 20px; }
-    .footer-left p, .footer-right li {
-      color: #4c4c4c;
-      font-size: 14px;
-      margin: 6px 0;
-    }
-    .footer-right ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-right a {
-      color: #4c4c4c;
-      text-decoration: none;
-    }
-    .banner {
-      background-color: #eaf0ed;
-      padding: 60px 20px;
-    }
-    .banner-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: auto;
-      gap: 40px;
-    }
-    .banner-text {
-      flex: 1 1 400px;
-    }
-    .banner-text small {
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1px;
-      color: #333;
-    }
-    .banner-text h2 {
-      color: #0a2149;
-      font-size: 32px;
-      margin: 10px 0;
-    }
-    .banner-text p {
+    input.gsc-input {
+      font-family: 'Poppins', sans-serif;
       font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .banner-btn {
-      display: inline-block;
-      background-color: #0a2149;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-    .banner-image {
-      flex: 1 1 400px;
-      text-align: center;
-    }
-    .banner-image img {
-      max-width: 100%;
-      height: auto;
+      border: none;
+      padding: 10px 12px;
       border-radius: 8px;
+      width: 250px;
+      background-color: white;
+      color: #4c4c4c;
     }
-    p { color: #4c4c4c; }
+    .gsc-input-box {
+      border: none !important;
+      background: white !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+    }
+    .gsc-search-button-v2 {
+      background: transparent !important;
+      border: none !important;
+      padding: 8px !important;
+      margin-left: -5px;
+    }
   </style>
 </head>
 <body>
 <header>
-  <div class="header-left">
-    <form class="search-form">
-      <input type="text" placeholder="Search" />
-      <button type="submit" aria-label="Buscar">
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#0a2149" viewBox="0 0 24 24">
-    <path d="M10 2a8 8 0 015.292 13.708l4.5 4.5-1.414 1.414-4.5-4.5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
-  </svg>
-</button>
-    </form>
-  </div>
-  <div class="header-center">
+  <div class="header-container">
+    <div class="header-left">
+      <div class="gcse-search"></div>
+    </div>
+    <div class="header-center">
       <a href="index.html">
-    <img src="img/LOGO BLANCO_Mesa de trabajo 1.svg" class="logo">
-        </a>
-  </div>
-  <div class="header-right">
-    <a href="#contacto">CONTÁCTANOS</a>
+        <img src="img/LOGO BLANCO_Mesa de trabajo 1.svg" class="logo">
+      </a>
+    </div>
+    <div class="header-right">
+      <a href="#contacto">CONTÁCTANOS</a>
+    </div>
   </div>
 </header>
 <div style="height: 90px;"></div>
-
 <!-- Banner visual con botón flotante -->
 <style>
   .slider-container {
